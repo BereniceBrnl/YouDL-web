@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div>
+    <img src="{{ video_thumbnail }}">
+    <p class="display-text">Vous allez télécharger <strong>{{ video_title }}</strong></p>
+    <form class="button-download" action="/confirmation" method="POST">
+        <button type="submit">Télécharger</button>
+    </form>
+    <form class="button-download" action="/" method="GET">
+        <button type="submit">Annuler</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

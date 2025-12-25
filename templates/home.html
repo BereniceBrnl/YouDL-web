@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<h1 class="title">
+    YouDL
+    <img src="/assets/youtube.png" alt="">
+</h1>
+
+<div class="input-url">
+    <p class="display-text">
+        Télécharger la musique de YouTube. Entrez une URL pour commencer.
+    </p>
+    <form action="/" method="POST">
+        <input type="text" id="url" name="url" required placeholder="Copier ici">
+        <button type="submit">Commencer</button>
+    </form>
+
+</div>
+
+{% endblock %}
+

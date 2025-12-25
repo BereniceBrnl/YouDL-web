@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouDL</title>
+    <link href="/static/favicon.ico" rel="icon">
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Londrina+Shadow&display=swap" rel="stylesheet">    
+
+</head>
+
+<body>
+
+    <header>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <p class="display-text">
+            {{ messages | join(" ") }}
+        </p>
+        {% endif %}
+        {% endwith %}
+    </header>
+
+    <main class="container">
+        {% block main %}{% endblock %}
+    </main>
+    
+</body>
+</html>
