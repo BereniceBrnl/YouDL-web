@@ -4,4 +4,3 @@ pytubefix
 pathlib
 Gunicorn
 werkzeug
-ssl
