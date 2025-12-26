@@ -4,6 +4,8 @@ from pytubefix import YouTube
 from YoutubeUrl import YoutubeUrl
 from pathlib import Path
 from config import SECRET_KEY
+from werkzeug.middleware.proxy_fix import ProxyFix
+
 
 app = Flask(__name__)
 
@@ -13,6 +15,10 @@ app.config.from_mapping(
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
+
+app.wsgi_app = ProxyFix(
+    app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+)
 
 youtube_url = YoutubeUrl()
 
