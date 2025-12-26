@@ -1,3 +1,6 @@
+import ssl
+ssl._create_default_https_context = ssl._create_stdlib_context
+
 from flask import Flask, render_template, request, flash, redirect
 from flask_session import Session
 from pytubefix import YouTube
